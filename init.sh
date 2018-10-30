@@ -1,6 +1,6 @@
 echo on
 sudo ln -sf /home/box/web/etc/nginx.conf /etc/nginx/nginx.conf
 sudo unlink /etc/nginx/sites-enabled/default
-sudo ln -sf /home/box/web/etc/hello.py /etc/gunicorn.d/hello.py
+sudo ln -sf /home/box/web/etc/gunicorn.conf /etc/gunicorn.d/gunicorn.conf
 sudo /etc/init.d/nginx restart
-gunicorn -c /etc/gunicorn.d/hello.py hello:wsgi_application
+sudo /etc/init.d/gunicorn restart
